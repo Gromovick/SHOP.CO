@@ -15,7 +15,7 @@ module.exports = {
       propList: ['*'],
       selectorBlackList: [],
       replace: true,
-      mediaQuery: false,
+      mediaQuery: true,
       minPixelValue: 2,
     }),
     autoprefixer(),
