@@ -1,0 +1,68 @@
+@font-face {
+  font-family: 'Satoshi';
+  font-style: normal;
+  font-weight: normal;
+  src:
+    local('Satoshi Regular'),
+    url('../assets/fonts/satoshi/Satoshi-Regular.woff') format('woff');
+}
+@font-face {
+  font-family: 'Satoshi';
+  font-style: italic;
+  font-weight: normal;
+  src:
+    local('Satoshi Italic'),
+    url('../assets/fonts/satoshi/Satoshi-Italic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  font-style: normal;
+  font-weight: 500;
+  src:
+    local('Satoshi Medium'),
+    url('../assets/fonts/satoshi/Satoshi-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  font-style: italic;
+  font-weight: 500;
+  src:
+    local('Satoshi Medium Italic'),
+    url('../assets/fonts/satoshi/Satoshi-MediumItalic.woff') format('woff');
+}
+@font-face {
+  font-family: 'Satoshi';
+  font-style: normal;
+  font-weight: 700;
+  src:
+    local('Satoshi Bold'),
+    url('../assets/fonts/satoshi/Satoshi-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  font-style: italic;
+  font-weight: 700;
+  src:
+    local('Satoshi Bold Italic'),
+    url('../assets/fonts/satoshi/Satoshi-BoldItalic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Integral CF';
+  font-style: normal;
+  font-weight: 700;
+  src:
+    local('Integral CF Bold'),
+    url('../assets/fonts/integralCF/IntegralCF-Bold.woff') format('woff');
+}
+@font-face {
+  font-family: 'Integral CF';
+  font-style: italic;
+  font-weight: 700;
+  src:
+    local('Integral CF Bold Italic'),
+    url('../assets/fonts/integralCF/IntegralCF-BoldItalic.woff') format('woff');
+}

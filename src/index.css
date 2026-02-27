@@ -1,4 +1,10 @@
-@import "tailwindcss";
+@import './styles/fonts.css';
+@import 'tailwindcss';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@theme {
+  --font-satoshi: 'Satoshi', sans-serif;
+  --font-integral: 'Integral CF', sans-serif;
+}
