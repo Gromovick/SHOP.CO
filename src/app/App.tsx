@@ -1,10 +1,13 @@
 import React from 'react';
+import MainLayout from '../components/templates/MainLayout';
 
-type Props = {};
-
-const App = (props: Props) => {
+const App = () => {
   return (
-    <div className="bg-red-500 font-integral text-[100px] font-bold italic">App</div>
+    <div>
+      <MainLayout>
+        <div>Content</div>
+      </MainLayout>
+    </div>
   );
 };
 

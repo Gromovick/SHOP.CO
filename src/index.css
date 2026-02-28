@@ -1,9 +1,31 @@
-@import './styles/fonts.css';
 @import 'tailwindcss';
-@import 'tailwindcss/preflight';
-@tailwind utilities;
+/* @import 'tailwindcss/preflight'; // STYLES DO NOT APPLY WITH THIS
+@tailwind utilities; */
+@import './styles/fonts.css';
+
+html,
+body,
+:root {
+  color-scheme: dark;
+}
 
 @theme {
   --font-satoshi: 'Satoshi', sans-serif;
   --font-integral: 'Integral CF', sans-serif;
+  --color-gray: #F0F0F0;
+}
+
+@layer base {
+  p,
+  a,
+  span,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  li {
+    line-height: 1;
+  }
 }
