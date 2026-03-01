@@ -14,7 +14,7 @@ const SearchBar = ({ className }: Props) => {
     rounded-[62px] items-center 
     gap-3 focus-within:outline-1 outline-gray-400 hidden lg:flex'
       >
-        <HiOutlineSearch color="black" size={24} className="" />
+        <HiOutlineSearch color="black" opacity={0.4} size={24} className="" />
         <input
           type="text"
           className="focus-within:outline-none text-black placeholder:text-black/40"

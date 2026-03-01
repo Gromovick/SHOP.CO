@@ -5,7 +5,7 @@ const App = () => {
   return (
     <div>
       <MainLayout>
-        <div>Content</div>
+        <div className='w-full h-full bg-white'></div>
       </MainLayout>
     </div>
   );
