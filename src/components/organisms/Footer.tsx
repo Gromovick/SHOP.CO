@@ -8,13 +8,14 @@ import PaypalIcon from '../../assets/images/payments/paypal.svg';
 import ApplepayIcon from '../../assets/images/payments/applepay.svg';
 import GooglepayIcon from '../../assets/images/payments/googlepay.svg';
 import { cn } from '../../lib';
+import Container from '../templates/Container';
 
 const payments = [
-  VisaIcon,
-  MastercardIcon,
-  PaypalIcon,
-  ApplepayIcon,
-  GooglepayIcon,
+  { img: VisaIcon, alt: 'Visa image' },
+  { img: MastercardIcon, alt: 'MasterCard image' },
+  { img: PaypalIcon, alt: 'Paypal image' },
+  { img: ApplepayIcon, alt: 'Applepay image' },
+  { img: GooglepayIcon, alt: 'Google image' },
 ];
 
 const footerSections = [
@@ -62,120 +63,147 @@ const footerSections = [
   },
 ];
 
+const socials = [
+  { icon: FaTwitter, label: 'Twitter', href: 'https://x.com/userseva404' },
+  {
+    icon: FaFacebookF,
+    label: 'Facebook',
+    href: 'https://x.com/userseva404',
+    dark: true,
+  },
+  { icon: FaInstagram, label: 'Instagram', href: 'https://x.com/userseva404' },
+  { icon: FaGithub, label: 'GitHub', href: 'https://x.com/userseva404' },
+];
+
 const Footer = () => {
   return (
     <div className="">
-      <div className="px-4 bg-linear-to-b from-white from-50% to-gray to-50%">
-        <div
-          className="px-6 py-8
+      <div className=" bg-linear-to-b from-white from-50% to-gray to-50%">
+        <Container>
+          <div
+            className="px-6 py-8
            bg-black 
             rounded-[20px] flex flex-col lg:flex-row lg:items-center gap-8"
-        >
-          <p className=" font-integral font-bold text-[32px] text-pretty text-white lg:text-[40px]">
-            STAY UPTO DATE ABOUT OUR LATEST OFFERS
-          </p>
-          <div className="grid gap-3 lg:basis-[350px] shrink-0">
-            <div className="focus-within:outline-3 focus-within:outline-green-400 px-4 py-3 flex gap-3 items-center w-full bg-white rounded-[62px]">
-              <TbMail color="black" size={20} opacity={0.4} />
-              <input
-                className="focus-within:outline-0 text-black placeholder:text-black/40"
-                type="text"
-                placeholder="Enter your email address"
-              />
+          >
+            <p className=" font-integral font-bold text-[32px] text-pretty text-white lg:text-[40px]">
+              STAY UPTO DATE ABOUT OUR LATEST OFFERS
+            </p>
+            <div className="grid gap-3 lg:basis-[350px] shrink-0">
+              <label className="focus-within:outline-3 focus-within:outline-green-400 px-4 py-3 flex gap-3 items-center w-full bg-white rounded-[62px]">
+                <TbMail className="size-5 text-black/40 " />
+                <input
+                  className="outline-none text-black placeholder:text-black/40"
+                  type="email"
+                  placeholder="Enter your email address"
+                />
+              </label>
+              <button
+                type="button"
+                className=" bg-white px-4 py-3 text-black rounded-[62px] w-full"
+              >
+                Subscribe to Newsletter
+              </button>
             </div>
-            <button className=" bg-white px-4 py-3 text-black rounded-[62px] w-full">
-              Subscribe to Newsletter
-            </button>
           </div>
-        </div>
+        </Container>
       </div>
 
       <div className="bg-gray">
-        <div className="pt-[50px] pb-10  px-4  flex flex-col justify-between gap-6 lg:flex-row">
-          <div className="lg:max-w-[250px]">
-            <div className="mb-3.5">
-              <Logo />
+        <Container>
+          <div className="pt-[50px] pb-10 flex flex-col justify-between gap-6 lg:flex-row">
+            <div className="lg:max-w-[250px]">
+              <div className="mb-3.5">
+                <Logo />
+              </div>
+              <p className="mb-5 text-[14px] font-satoshi text-black/60">
+                We have clothes that suits your style and which you’re proud to
+                wear. From women to men.
+              </p>
+              <div className="flex gap-3 ">
+                {socials.map(({ icon: Icon, label, href, dark }) => {
+                  return (
+                    <a
+                      key={`footer-social-${label}`}
+                      aria-label={label}
+                      href={href}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      className={cn(
+                        `p-2 flex items-center justify-center bg-white rounded-full
+              border border-black/20`,
+                        dark && 'bg-black',
+                      )}
+                    >
+                      <Icon
+                        className={cn(
+                          'size-4 text-black',
+                          dark && 'text-white',
+                        )}
+                      />
+                    </a>
+                  );
+                })}
+              </div>
             </div>
-            <p className="mb-5 text-[14px] font-satoshi text-black/60">
-              We have clothes that suits your style and which you’re proud to
-              wear. From women to men.
-            </p>
-            <div className="flex gap-3 ">
-              <div
-                className="p-2 flex items-center justify-center bg-white rounded-full
-              border border-black/20"
-              >
-                <FaTwitter size={16} />
-              </div>
-              <div
-                className="p-2 flex items-center justify-center bg-black rounded-full
-              border border-black/20"
-              >
-                <FaFacebookF size={16} color="white" />
-              </div>
-              <div
-                className="p-2 flex items-center justify-center bg-white rounded-full
-              border border-black/20"
-              >
-                <FaInstagram size={16} />
-              </div>
-              <div
-                className="p-2 flex items-center justify-center bg-white rounded-full
-              border border-black/20"
-              >
-                <FaGithub size={16} />
-              </div>
-            </div>
-          </div>
-          <div className="grid grid-cols-2 gap-6  lg:contents ">
-            {footerSections.map(({ name: sectionName, links }, index) => {
-              return (
-                <div
-                  key={`footer-section-${sectionName}-${index}`}
-                  className="flex flex-col gap-4"
-                >
-                  <p className="text-[14px] font-medium font-satoshi text-black lg:text-[16px]">
-                    {sectionName}
-                  </p>
-                  <ul className="flex flex-col gap-3">
-                    {links.map(({ name, href }, index) => {
-                      return (
-                        <li
-                          key={`footer-section-link-${sectionName}-${name}-${index}`}
-                        >
-                          <a
-                            href={href}
-                            className="text-black/60 text-[14px] font-satoshi lg:text-[16px]"
+            <div className="grid grid-cols-2 max-w-[400px] w-full mx-auto gap-6  lg:contents lg:max-w-none">
+              {footerSections.map(({ name: sectionName, links }, index) => {
+                const isRight = index % 2 !== 0;
+                return (
+                  <div
+                    key={`footer-section-${sectionName}-${index}`}
+                    className={cn(
+                      'grid gap-4',
+                      isRight && 'justify-items-end lg:justify-items-start',
+                    )}
+                  >
+                    <p className="text-[14px] font-medium font-satoshi text-black lg:text-[16px]">
+                      {sectionName}
+                    </p>
+                    <ul
+                      className={cn(
+                        'flex flex-col gap-3',
+                        isRight && 'items-end lg:items-start',
+                      )}
+                    >
+                      {links.map(({ name, href }, index) => {
+                        return (
+                          <li
+                            key={`footer-section-link-${sectionName}-${name}-${index}`}
                           >
-                            {name}
-                          </a>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              );
-            })}
+                            <a
+                              href={href}
+                              className="text-black/60 text-[14px] font-satoshi lg:text-[16px]"
+                            >
+                              {name}
+                            </a>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                );
+              })}
+            </div>
           </div>
-        </div>
-        <div className="h-px bg-black/10"></div>
-        <div className="flex flex-col gap-4 items-center justify-between pb-[75px] pt-4 lg:flex-row ">
-          <p className="text-[14px] font-satoshi text-black/60">
-            Shop.co © 2000-2023, All Rights Reserved
-          </p>
-          <div className="flex gap-[10px] ">
-            {payments.map((payment, index) => {
-              return (
-                <img
-                  className={cn('w-10 rounded-[3px] lg:w-11')}
-                  key={`footer-payment-${index}`}
-                  alt=""
-                  src={payment}
-                />
-              );
-            })}
+          <div className="h-px bg-black/10"></div>
+          <div className="flex flex-col gap-4 items-center justify-between pb-[75px] pt-4 lg:flex-row ">
+            <p className="text-[14px] font-satoshi text-black/60">
+              Shop.co © 2000-2023, All Rights Reserved
+            </p>
+            <div className="flex gap-[10px] ">
+              {payments.map(({ img, alt }, index) => {
+                return (
+                  <img
+                    className={cn('w-10 rounded-[3px] lg:w-11')}
+                    key={`footer-payment-${index}-${alt}`}
+                    alt={alt}
+                    src={img}
+                  />
+                );
+              })}
+            </div>
           </div>
-        </div>
+        </Container>
       </div>
     </div>
   );

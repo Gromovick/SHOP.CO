@@ -8,6 +8,8 @@ const buttonVariants = cva('cursor-pointer', {
     variant: {
       default: '',
       icon: '',
+      secondary:
+        'text-white p-4 bg-black font-satoshi text-[16px] rounded-[62px] font-medium',
     },
     size: {
       default: '',
