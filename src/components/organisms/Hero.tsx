@@ -20,7 +20,7 @@ const benefits = [
 
 const Hero = () => {
   return (
-    <div className="pt-10 lg:pt-[100px]  relative z-0 overflow-hidden  bg-gray grow" >
+    <div className="pt-10   relative z-0 overflow-hidden flex flex-col  bg-gray grow lg:pt-[100px] lg:block">
       <Container className="z-2 relative">
         <div className="lg:max-w-[600px]">
           <div className="grid gap-5 mb-6">
@@ -42,8 +42,8 @@ const Hero = () => {
           <div className="flex flex-wrap justify-center gap-8 gap-y-3 mx-auto max-w-[350px] lg:max-w-none lg:justify-start ">
             {benefits.map(({ top, bottom }, index) => {
               return (
-                <>
-                  <div key={`hero-benefits-${bottom}`} className={''}>
+                <React.Fragment key={`hero-benefits-${bottom}`}>
+                  <div className={''}>
                     <h3 className="font-satoshi text-black text-[24px] font-bold lg:text-[40px]">
                       {top}
                     </h3>
@@ -53,23 +53,26 @@ const Hero = () => {
                   </div>
                   {index !== benefits.length - 1 && (
                     <div
+                      // key={`hero-benefits-divider-${bottom}`}
                       className={cn(
                         'w-px bg-black/10',
-                        index === 1 && 'w-0 lg:w-px',
+                        index === 1 && 'w-0 hidden lg:w-px lg:block',
                       )}
                     ></div>
                   )}
-                </>
+                </React.Fragment>
               );
             })}
           </div>
         </div>
       </Container>
-      <img
-        src={hero}
-        alt=""
-        className="z-1 w-full object-cover lg:absolute lg:right-[50px] lg:max-w-[670px] lg:top-0 "
-      />
+      <div className="w-full grow overflow-hidden flex aspect-390/420 justify-center lg:absolute lg:right-[clamp(-50px,calc(-80px+5vw),50px)] lg:max-w-[clamp(570px,60vw,870px)] lg:bottom-0 lg:w-full ">
+        <img
+          src={hero}
+          alt=""
+          className="z-1 w-full h-[140%] max-w-none object-cover object-top lg:h-auto"
+        />
+      </div>
     </div>
   );
 };
