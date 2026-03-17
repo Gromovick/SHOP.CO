@@ -1,4 +1,3 @@
-import React from 'react';
 import casual from '../../assets/images/browse/casual.png';
 import formal from '../../assets/images/browse/formal.png';
 import party from '../../assets/images/browse/party.png';

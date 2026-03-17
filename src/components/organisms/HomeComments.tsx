@@ -1,6 +1,6 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import Comment from '../molecules/Comment';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide, type SwiperClass } from 'swiper/react';
 import Container from '../templates/Container';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa6';
 import { Button } from '../atoms/Button';
@@ -14,9 +14,7 @@ const breakpoints = {
 };
 
 const HomeComments = () => {
-  const nextEl = useRef(null);
-  const prevEl = useRef(null);
-  const swiper = useRef(null);
+  const swiper = useRef<SwiperClass | null>(null);
   const [activeSlide, setActiveSlide] = useState(0);
 
   const getCircularDistance = (a: number, b: number, total: number): number => {
@@ -34,15 +32,13 @@ const HomeComments = () => {
           <div className="flex gap-4">
             <Button
               variant={'icon'}
-              ref={prevEl}
-              onClick={() => swiper.current.slidePrev()}
+              onClick={() => swiper.current?.slidePrev()}
             >
               <FaArrowLeft className="size-6 text-black" />
             </Button>
             <Button
               variant={'icon'}
-              ref={nextEl}
-              onClick={() => swiper.current.slideNext()}
+              onClick={() => swiper.current?.slideNext()}
             >
               <FaArrowRight className="size-6 text-black" />
             </Button>
@@ -63,7 +59,6 @@ const HomeComments = () => {
           console.log(e.realIndex);
         }}
         className="w-full"
-        navigation={{ nextEl: nextEl.current, prevEl: prevEl.current }}
         onSwiper={(sw) => {
           console.log(sw);
 

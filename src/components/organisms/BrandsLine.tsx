@@ -1,4 +1,3 @@
-import React from 'react';
 import Versace from '../../assets/images/brands/versace.svg';
 import Zara from '../../assets/images/brands/zara.svg';
 import Gucci from '../../assets/images/brands/gucci.svg';

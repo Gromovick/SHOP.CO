@@ -1,5 +1,4 @@
 import { NavigationMenu } from 'radix-ui';
-import React from 'react';
 import { RiArrowDropDownLine } from 'react-icons/ri';
 
 const navItems = [
@@ -16,7 +15,7 @@ const shopSubNavItems = [
 
 const NavBar = () => {
   return (
-    <NavigationMenu.Root className='hidden lg:block'>
+    <NavigationMenu.Root className="hidden lg:block">
       <NavigationMenu.List className="flex gap-6 text-black">
         <NavigationMenu.Item>
           <NavigationMenu.Trigger className="flex items-center gap-1 cursor-pointer">

@@ -1,4 +1,3 @@
-import React from 'react';
 import Logo from '../atoms/Logo';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { Button } from '../atoms/Button';

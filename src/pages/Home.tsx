@@ -1,4 +1,3 @@
-import React from 'react';
 import BrandsLine from '../components/organisms/BrandsLine';
 import NewArrivals from '../components/organisms/NewArrivals';
 import BuySection from '../components/templates/BuySection';

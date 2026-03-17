@@ -1,4 +1,3 @@
-import React from 'react';
 import Rating from './Rating';
 import { IoCheckmarkCircle } from 'react-icons/io5';
 import { cn } from '../../lib';
@@ -23,9 +22,9 @@ const Comment = ({ blur = false }: Props) => {
         <IoCheckmarkCircle className="text-[#01AB31] w-[20px] lg:w-6 " />
       </div>
       <p className="text-[14px] font-satoshi text-black/60 lg:text-[16px]">
-        "I'm blown away by the quality and style of the clothes I received from
-        Shop.co. From casual wear to elegant dresses, every piece I've bought
-        has exceeded my expectations."
+        &quot;I&apos;m blown away by the quality and style of the clothes I
+        received from Shop.co. From casual wear to elegant dresses, every piece
+        I&apos;ve bought has exceeded my expectations.&quot;
       </p>
     </div>
   );

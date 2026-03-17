@@ -1,4 +1,3 @@
-import React from 'react';
 import Container from './Container';
 import img from '../../assets/images/product.webp';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -61,7 +60,7 @@ const BuySection = ({ heading }: Props) => {
           wrapperClass="justify-between"
           className="mb-[24px] w-full"
         >
-          {items.map((item, index) => {
+          {items.map((item) => {
             return (
               <SwiperSlide
                 key={`${item.title}-${item.rating}`}
@@ -78,13 +77,12 @@ const BuySection = ({ heading }: Props) => {
                   <p className="font-satoshi font-bold text-[14px] text-black mb-1 lg:mb-2 lg:text-[20px]">
                     {item.title}
                   </p>
-                  <div className="flex gap-[10px] items-center mb-1 lg:mb-2">
-                    <Rating rating={item.rating} className="max-w-[100px] gap-1 lg:max-w-[130px]" />
-                    <span className="font-satoshi text-[12px] text-black lg:text-[16px]">
-                      {item.rating}
-                      {'/'}
-                      <span className="text-black/50">5</span>
-                    </span>
+                  <div className="mb-1 lg:mb-2">
+                    <Rating
+                      rating={item.rating}
+                      showNums
+                      className="max-w-[100px] gap-1 lg:max-w-[130px]"
+                    />
                   </div>
                   <p className="font-satoshi text-black text-[20px] font-bold lg:text-[24px] flex gap-[5px]">
                     ${item.discountPrice || item.price}

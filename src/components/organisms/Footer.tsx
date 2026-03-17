@@ -1,4 +1,3 @@
-import React from 'react';
 import { TbMail } from 'react-icons/tb';
 import Logo from '../atoms/Logo';
 import { FaFacebookF, FaGithub, FaInstagram, FaTwitter } from 'react-icons/fa';
