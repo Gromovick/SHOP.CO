@@ -12,12 +12,12 @@ const Rating = ({ className, rating, showNums = false }: Props) => {
   return (
     <div className="flex gap-[10px] items-center mb-1 lg:mb-2">
       <div className={cn('flex gap-1', className)}>
-        {[0, 1, 2, 3, 4].map((star, index) => {
+        {[0, 1, 2, 3, 4].map((star) => {
           return (
             <Star
               className={'size-full'}
-              key={`rating-${index}`}
-              fill={getStage(index)}
+              key={`rating-${star}`}
+              fill={getStage(star)}
             />
           );
         })}

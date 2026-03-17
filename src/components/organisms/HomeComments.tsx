@@ -67,9 +67,9 @@ const HomeComments = () => {
       >
         {Array(10)
           .fill(0)
-          .map((Item, index) => {
+          .map((item, index) => {
             return (
-              <SwiperSlide key={`home-comment-${index}`}>
+              <SwiperSlide key={`home-comment-${index}-${item}`}>
                 <Comment
                   blur={getCircularDistance(activeSlide, index, 10) === 2}
                 />
